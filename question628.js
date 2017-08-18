@@ -1,4 +1,5 @@
 /**
+ * @name 628. Maximum Product of Three Numbers
  * @param {number[]} nums
  * @return {number}
  */
