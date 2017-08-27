@@ -4,23 +4,34 @@
  * @return {number[]}
  */
 var findDuplicates = function(nums) {
-    var arr = [];
-    for (var i = 0; i < nums.length; i++) {
-        // 利用负索引存储相应数值的出现次数
-        if (nums[-nums[i]] === undefined) {
-            nums[-nums[i]] = 1;
-        } else {
-            nums[-nums[i]] = 2;
-        }
+    // 使用 ES6 中的map 类型最简单
+    var result = [];
+    var m = new Map();
+    for(var i =0; i < nums.length; i++ ) {
+        if(m.has(nums[i])){
+        result.push(nums[i]);
+    }
+        m.set(nums[i],i);
     }
 
-    for (var j = -1; j >= -nums.length; j--) {
-        if (nums[j] === 2) {
-            arr.push(Math.abs(j));
-        }
-    }
-
-    return arr;
+    return result;
+    // var arr = [];
+    // for (var i = 0; i < nums.length; i++) {
+    //     // 利用负索引存储相应数值的出现次数
+    //     if (nums[-nums[i]] === undefined) {
+    //         nums[-nums[i]] = 1;
+    //     } else {
+    //         nums[-nums[i]] = 2;
+    //     }
+    // }
+    //
+    // for (var j = -1; j >= -nums.length; j--) {
+    //     if (nums[j] === 2) {
+    //         arr.push(Math.abs(j));
+    //     }
+    // }
+    //
+    // return arr;
 
     // var arr = [];
     // arr.length = nums.length;
