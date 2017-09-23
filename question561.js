@@ -4,11 +4,19 @@
  * @return {number}
  */
 var arrayPairSum = function(nums) {
-    var sum = 0;
-    var newNums = nums.sort(function(a, b) {
+    // var sum = 0;
+    // var newNums = nums.sort(function(a, b) {
+    //     return a - b;
+    // });
+    // for (var i = 0; i < newNums.length; i+=2) {
+    //     sum += newNums[i];
+    // }
+    // return sum;
+    let sum = 0;
+    let newNums = nums.sort((a, b) => {
         return a - b;
     });
-    for (var i = 0; i < newNums.length; i+=2) {
+    for (let i = 0; i < newNums.length; i+=2) {
         sum += newNums[i];
     }
     return sum;
