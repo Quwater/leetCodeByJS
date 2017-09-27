@@ -4,10 +4,10 @@
  * @return {number}
  */
 var maxProfit = function(prices) {
-    var sum = 0;
+    let sum = 0;
 
     // 相邻价位赚钱的全部买进，不赚钱的全部避开
-    for (var i = 0; i < prices.length-1; i++) {
+    for (let i = 0; i < prices.length-1; i++) {
         sum += Math.max(prices[i+1]-prices[i], 0);
     }
     return sum;
