@@ -4,8 +4,9 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-    var major = nums[0], count = 1;
-    for (var i = 1; i < nums.length; i++) {
+    let major = nums[0],
+        count = 1;
+    for (let i = 1; i < nums.length; i++) {
         // 当 count 等于0时，证明当前 major 不是大多数，换成另一个
         // major 是占大多数的数字，所以可以将其他数字的 count 全部降为0，同时自己的为正
         if (count === 0) {
