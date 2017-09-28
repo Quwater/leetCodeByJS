@@ -16,7 +16,7 @@ var twoSum = function(numbers, target) {
     //     }
     // }
     //避免循环两次，改为，左一次，右一次（小于目标，则左边小，大于目标，则右边大）
-    var l = 0,
+    let l = 0,
         r = numbers.length-1,
         index = [];
     while (l < r) {
