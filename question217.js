@@ -6,7 +6,7 @@
 var containsDuplicate = function(nums) {
     nums.sort();
     // 排序后降低算法复杂度
-    for (var i = 1; i < nums.length; i++) {
+    for (let i = 1; i < nums.length; i++) {
         if (nums[i] === nums[i-1]) {
             return true;
         }
