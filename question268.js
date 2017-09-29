@@ -4,12 +4,9 @@
  * @return {number}
  */
 var missingNumber = function(nums) {
-    nums.sort(function(a, b) {
-        return a-b;
-    });
-    var n = nums.length;
-    var sum = 0;
-    for(var i = 0; i < n; i++) {
+    let n = nums.length;
+    let sum = 0;
+    for(let i = 0; i < n; i++) {
         sum += nums[i];
     }
     // 0~n个数的和减去数组之和，得到漏掉的数
