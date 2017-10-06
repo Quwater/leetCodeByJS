@@ -5,39 +5,22 @@
  * @return {boolean}
  */
  var containsNearbyDuplicate = function(nums, k) {
-     if(nums.length <= 1 || k < 1) {
+     if (nums.length <= 1 || k < 1) {
          return false;
      }
-     var arr = [];
-     for (var i = 0; i < nums.length; i++) {
-         if (arr[nums[i]] === 1) {
+     // nums[i]对应的值如果不为 undefined，那么在 k 的范围内，已经有个值与其相等
+     let map = {};
+     for (let i = 0; i < nums.length; i++) {
+         if (map[nums[i]] !== undefined) {
              return true;
          } else {
              if (i - k >= 0) {
-                 arr[nums[i-k]] = undefined;
+                 map[nums[i-k]] = undefined;
              }
-             arr[nums[i]] = 1;
+             map[nums[i]] = true;
          }
      }
-   return false;
-    // nums[i]对应的值如果不为 undefined，那么在 k 的范围内，已经有个值与其相等
-    //  var map = {};
-    //  for(var i=0; i<nums.length; i++)
-    //  {
-    //      if(map[nums[i]] !== undefined)
-    //      {
-    //          return true;
-    //      }
-    //      else
-    //      {
-    //          if(i - k >=0)
-    //          {
-    //              map[nums[i-k]] = undefined;
-    //          }
-    //          map[nums[i]] = true;
-    //      }
-    //  }
-    //  return false;
+     return false;
  };
 
 // 复杂度过高，通不过大量数据测试
