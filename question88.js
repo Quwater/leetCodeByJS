@@ -7,9 +7,9 @@
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
 var merge = function(nums1, m, nums2, n) {
-    var i = m - 1;
-    var j = n - 1;
-    var k = m + n -1;
+    let i = m - 1;
+    let j = n - 1;
+    let k = m + n -1;
     // 如果nums1[i]大于 nums2[j]，那么赋值 nums1[i],否则赋值 nums2[j]
     while (i >= 0 && j >= 0) {
         if (nums1[i] > nums2[j]) {
