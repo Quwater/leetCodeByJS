@@ -5,12 +5,12 @@
  * @return {boolean}
  */
 var canPlaceFlowers = function(flowerbed, n) {
-    var count = 0;
+    let count = 0;
     // 当count大于n时，便不用再统计了
     for (var i = 0; i < flowerbed.length && count < n; i++) {
         if (flowerbed[i] === 0) {
-            var next = (i === flowerbed.length - 1) ? 0 : flowerbed[i+1];
-            var prev = (i === 0) ? 0 : flowerbed[i - 1];
+            let next = (i === flowerbed.length - 1) ? 0 : flowerbed[i+1];
+            let prev = (i === 0) ? 0 : flowerbed[i - 1];
             if (next === 0 && prev === 0) {
                 flowerbed[i] = 1;
                 count++;
