@@ -5,12 +5,15 @@
  */
 var findUnsortedSubarray = function(nums) {
     // 复制数组并排序，找出不同的两个端点即可
-    var arr = nums.slice(0);
-    var len = nums.length;
-    arr.sort(function(a, b) {
+    let arr = nums.slice(0);
+    const len = nums.length;
+    arr.sort((a, b) => {
         return a - b;
     });
-    var begin = 0, end = len -1;
+
+    let begin = 0,
+        end = len - 1;
+
     while (begin < len && nums[begin] === arr[begin]) {
         begin++;
     }
