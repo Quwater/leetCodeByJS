@@ -4,7 +4,7 @@
  * @return {boolean}
  */
 var isSorted = function(nums) {
-    for (var i = 0; i < nums.length - 1; i++) {
+    for (let i = 0; i < nums.length - 1; i++) {
         if (nums[i] > nums[i+1]) {
             return false;
         }
