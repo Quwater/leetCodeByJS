@@ -18,3 +18,4 @@ let maxDistToClosest = function(seats) {
     return Math.max(maxDistance, seats.length - 1 - lastSeated ); //[..., 1, 0, 0, ...]
 };
 maxDistToClosest([1,0,0,0,1,0,1]);
+
