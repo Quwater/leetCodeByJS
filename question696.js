@@ -15,6 +15,8 @@ let countBinarySubstrings = function (s) {
     //     }
     // }
     // return count;
+
+    // more clever solution
     let prevRunLength = 0,
         curRunLength = 1,
         res = 0;
@@ -25,6 +27,7 @@ let countBinarySubstrings = function (s) {
             prevRunLength = curRunLength;
             curRunLength = 1;
         }
+
         if (prevRunLength >= curRunLength) {
             res++;
         }
