@@ -35,3 +35,4 @@ var trailingZeroes = function (n) {
 //     }
 //     return sum;
 // }
+trailingZeroes(100);
