@@ -3,6 +3,7 @@
  * @return {number}
  */
 let reverse = function (x) {
+    // O(n)
     // let temp = Math.abs(x);
     // while (temp !== 0 && temp % 10 === 0) {
     //     temp /= 10;
@@ -14,6 +15,8 @@ let reverse = function (x) {
     //     return rev;
     // }
     // return 0;
+
+    // O(n)
     let output = 0;
     // Taking care of sign
     let sign = x > 0 ? 1 : -1;
