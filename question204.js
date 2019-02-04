@@ -21,6 +21,9 @@ var countPrimes = function (n) {
     //             notPrime[i*j] = true;
     //     }
     // }
+
+
+    // O(nlog(n))
     const sqrt = Math.sqrt(n);
 
     for (let i = 3; i < n; i += 2) {
