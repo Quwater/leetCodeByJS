@@ -2,6 +2,8 @@
  * @param {number} x
  * @return {number}
  */
+
+// O(log(n))
 let mySqrt = function(x) {
     //return Math.floor(Math.sqrt(x));
     let start = 0,
@@ -9,7 +11,6 @@ let mySqrt = function(x) {
         mid = null;
     while (start < end) {
         mid = Math.floor((start + end) / 2);
-        console.log(mid);
         if (mid * mid > x) {
             end = mid - 1;
         } else if (mid * mid < x) {
