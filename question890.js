@@ -26,5 +26,30 @@ let findAndReplacePattern = function (words, pattern) {
         }
     }
     return res;
+    // let wordsLen = words.length;
+    // let patternLen = pattern.length;
+
+    // let patternArr = [];
+    // let result = [];
+
+    // for (let i = 0; i < patternLen; i++) {
+    //     patternArr.push(pattern.indexOf(pattern[i]));
+    // }
+
+    // for (let i = 0; i < wordsLen; i++) {
+    //     let isMatch = true;
+    //     for (let j = 0; j < patternLen; j++) {
+    //         if (words[i].indexOf(words[i][j]) !== patternArr[j]) {
+    //             isMatch = false;
+    //             break;
+    //         }
+    //     }
+
+    //     if (isMatch) {
+    //         result.push(words[i]);
+    //     }
+    // }
+
+    // return result;
 };
-findAndReplacePattern(['abc','deq','mee','aqq','dkd','ccc'], 'abb');
+findAndReplacePattern(['abc', 'deq', 'mee', 'aqq', 'dkd', 'ccc'], 'abb');
