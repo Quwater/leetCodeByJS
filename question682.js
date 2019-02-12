@@ -2,6 +2,8 @@
  * @param {string[]} ops
  * @return {number}
  */
+
+// O(n)
 let calPoints = function (ops) {
     let stack = [];
     for (let i of ops) {
