@@ -4,12 +4,12 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var nextGreaterElement = function(findNums, nums) {
-    var arr = [];
-    for (var i = 0; i < findNums.length; i++) {
-        var index = nums.indexOf(findNums[i]);
+let nextGreaterElement = function(findNums, nums) {
+    let arr = [];
+    for (let i = 0; i < findNums.length; i++) {
+        let index = nums.indexOf(findNums[i]);
         // 遍历 下标为index 之后的 nums元素，如果大于，则加入 arr，并break
-        for (var j = index; j < nums.length; j++) {
+        for (let j = index; j < nums.length; j++) {
             if (nums[j] > findNums[i]) {
                 arr.push(nums[j]);
                 break;
@@ -20,3 +20,4 @@ var nextGreaterElement = function(findNums, nums) {
     }
     return arr;
 };
+nextGreaterElement([4,1,2], [1,3,4,2]);
