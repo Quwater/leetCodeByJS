@@ -4,6 +4,7 @@
  * @param {number[]} nums
  * @return {number[]}
  */
+// O(n2); 
 let nextGreaterElement = function(findNums, nums) {
     let arr = [];
     for (let i = 0; i < findNums.length; i++) {
