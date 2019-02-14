@@ -1,12 +1,12 @@
 /**
  * Initialize your data structure here.
  */
-var MyQueue = function() {
+let MyQueue = function() {
     this.queue = [];
 };
 
 /**
- * Push element x to the back of queue.
+ * Push element x to the back of queue. 
  * @param {number} x
  * @return {void}
  */
@@ -19,8 +19,7 @@ MyQueue.prototype.push = function(x) {
  * @return {number}
  */
 MyQueue.prototype.pop = function() {
-    var shift = this.queue.shift();
-    return shift;
+    return this.queue.shift();
 };
 
 /**
@@ -36,18 +35,5 @@ MyQueue.prototype.peek = function() {
  * @return {boolean}
  */
 MyQueue.prototype.empty = function() {
-    if (this.queue.length === 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return this.queue.length === 0;
 };
-
-/**
- * Your MyQueue object will be instantiated and called as such:
- * var obj = Object.create(MyQueue).createNew()
- * obj.push(x)
- * var param_2 = obj.pop()
- * var param_3 = obj.peek()
- * var param_4 = obj.empty()
- */
