@@ -23,21 +23,16 @@ let isValid = function (s) {
     // }
     // return (!stack.length);
     let key = {
-        '(': ')',
-        '{': '}',
-        '[': ']'
+        '(' : ')',
+        '{' : '}',
+        '[' : ']'
     };
     let open = [];
     for (let i = 0; i < s.length; i++) {
-        if (key.hasOwnProperty(s[i])) {
+        if (key[s[i]]){
             open.push(s[i]);
-        } else {
-            if (open.length === 0) {
-                return false;
-            }
-            if (key[open.pop()] !== s[i]) {
-                return false;
-            }
+        } else if (key[open.pop()] !== s[i]) {
+            return false;
         }
     }
     if (open.length > 0) {
