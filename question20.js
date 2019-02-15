@@ -3,31 +3,46 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function(s) {
-    var arr = s.split('');
-    var arr1 = ['(', '{', '['];
-    var arr2 = [')', '}', ']'];
-    var jian = function() {
-        var len = arr.length;
-        for (var i = 0; i < arr.length-1; i++) {
-            // 防止前后都不在对应数组中导致indexOf()值都为-1
-            if (arr1.indexOf(arr[i]) !== -1 && arr1.indexOf(arr[i]) === arr2.indexOf(arr[i+1])) {
-                arr.splice(i, 2);
-                if (arr.length === 0) {
-                    return;
-                }
+let isValid = function (s) {
+    // let stack = [],
+    //     map = {')': '(', '}': '{', ']': '['},
+    //     top_element = '';
+    // for (let i of s) {
+    //     if (map[i]) {
+    //         if (stack.length !== 0) {
+    //             top_element = stack.pop();
+    //         } else {
+    //             top_element = '#';
+    //         }
+    //         if (map[i] !== top_element) {
+    //             return false;
+    //         }
+    //     } else {
+    //         stack.push(i);
+    //     }
+    // }
+    // return (!stack.length);
+    let key = {
+        '(': ')',
+        '{': '}',
+        '[': ']'
+    };
+    let open = [];
+    for (let i = 0; i < s.length; i++) {
+        if (key.hasOwnProperty(s[i])) {
+            open.push(s[i]);
+        } else {
+            if (open.length === 0) {
+                return false;
+            }
+            if (key[open.pop()] !== s[i]) {
+                return false;
             }
         }
-        if (len === arr.length) {
-            return;
-        }
-        jian();
-    };
-    jian();
-    //一一减完就说明是合法的
-    if (arr.length === 0) {
-        return true;
-    }  else {
+    }
+    if (open.length > 0) {
         return false;
     }
+    return true;
 };
+isValid('()');
