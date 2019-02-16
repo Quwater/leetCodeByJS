@@ -1,7 +1,8 @@
+// seems more small
 /**
  * initialize your data structure here.
  */
-var MinStack = function() {
+let MinStack = function() {
     this.items = [];
     this.minValue;
 };
@@ -24,7 +25,7 @@ MinStack.prototype.push = function(x) {
  */
 // push最后一项前的最小值储存在最后一项中！
 MinStack.prototype.pop = function() {
-    var item = this.items.pop();
+    let item = this.items.pop();
     this.minValue = item[1];
 };
 
@@ -32,7 +33,7 @@ MinStack.prototype.pop = function() {
  * @return {number}
  */
 MinStack.prototype.top = function() {
-    var len = this.items.length;
+    let len = this.items.length;
     return this.items[len - 1][0];
 };
 
@@ -45,9 +46,9 @@ MinStack.prototype.getMin = function() {
 
 /**
  * Your MinStack object will be instantiated and called as such:
- * var obj = Object.create(MinStack).createNew()
+ * let obj = Object.create(MinStack).createNew()
  * obj.push(x)
  * obj.pop()
- * var param_3 = obj.top()
- * var param_4 = obj.getMin()
+ * let param_3 = obj.top()
+ * let param_4 = obj.getMin()
  */
