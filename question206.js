@@ -10,6 +10,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
+// O(n)
 let reverseList = function(head) {
     // if (!head || !(head.next)) {
     //     return head;
@@ -23,7 +24,7 @@ let reverseList = function(head) {
         current = head;
     // 遍历链表
     while (current) {
-        var next = current.next;
+        let next = current.next;
         // 将链接反向
         current.next = pre;
         pre = current;
