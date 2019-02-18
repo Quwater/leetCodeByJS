@@ -10,7 +10,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head) {
+let reverseList = function(head) {
     // if (!head || !(head.next)) {
     //     return head;
     // }
@@ -19,14 +19,15 @@ var reverseList = function(head) {
     // head.next = null;
     // return node;
 
-    var pre = null;
+    let pre = null,
+        current = head;
     // 遍历链表
-    while (head) {
-        var next = head.next;
+    while (current) {
+        var next = current.next;
         // 将链接反向
-        head.next = pre;
-        pre = head;
-        head = next;
+        current.next = pre;
+        pre = current;
+        current = next;
     }
     return pre;
 };
