@@ -31,3 +31,4 @@ let reverseList = function(head) {
     }
     return pre;
 };
+reverseList();
