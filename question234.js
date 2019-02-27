@@ -10,22 +10,48 @@
  * @param {ListNode} head
  * @return {boolean}
  */
-var isPalindrome = function(head) {
-    var first = head;
-    // 遍历链表，并增加 pre 属性
-    while (first&&first.next) {
-        var temp = first;
-        first = first.next;
-        first.pre = temp;
+// O(n)
+let isPalindrome = function(head) {
+    // change linked list to array
+    // let current = head,
+    //     str = '';
+    // while (current) {
+    //     str += current.next ? current.val + ' ' : current.val;
+    //     current = current.next;
+    // }
+    // let s = str.split(' ');
+    // for(let i = 0; i < s.length/2; i++){
+    //     if(!(s[i] === s[s.length-1-i])){
+    //         return false;
+    //     }
+    // }
+    // return true;
+
+    // more smart
+    if (!head) {
+        return true;
     }
-    var tail = first;
-    // 从两个方向同时遍历链表，判断首尾是否相等，如果不等，返回false
-    while (head && tail) {
-        if (head.val !== tail.val) {
+    let fast = head,
+        slow = head;
+    while (fast && fast.next) {
+        fast = fast.next.next;
+        slow = slow.next;
+    }
+    let pre = null;
+    while (slow) {
+        let next = slow.next;
+        slow.next = pre;
+        pre = slow;
+        slow = next;
+    }
+    let current = head;
+    while (pre) {
+        if (pre.val !== current.val) {
             return false;
         }
-        head = head.next;
-        tail = tail.pre;
+        pre = pre.next;
+        current = current.next;
     }
     return true;
 };
+isPalindrome();
