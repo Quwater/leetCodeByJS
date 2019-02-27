@@ -11,6 +11,7 @@
  * @param {number} val
  * @return {ListNode}
  */
+// O(n)
 let removeElements = function (head, val) {
     let pointer = head;
     let prev = null;
@@ -34,3 +35,4 @@ let removeElements = function (head, val) {
 
     return head;
 };
+removeElements();
