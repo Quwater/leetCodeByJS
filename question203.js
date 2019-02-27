@@ -11,9 +11,9 @@
  * @param {number} val
  * @return {ListNode}
  */
-var removeElements = function(head, val) {
-    var pointer = head;
-    var prev = null;
+let removeElements = function (head, val) {
+    let pointer = head;
+    let prev = null;
     // 遍历链表
     while (pointer) {
         if (pointer.val === val) {
@@ -21,7 +21,7 @@ var removeElements = function(head, val) {
             if (pointer === head) {
                 head = head.next;
                 pointer = head;
-            } else if(prev){
+            } else {
                 // 删除当前节点
                 prev.next = pointer.next;
                 pointer = pointer.next;
