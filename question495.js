@@ -4,19 +4,16 @@
  * @param {number} duration
  * @return {number}
  */
-var findPoisonedDuration = function(timeSeries, duration) {
-    var time = 0;
-    for (var i = 0; i < timeSeries.length-1; i++) {
-        if (timeSeries[i+1] - timeSeries[i] >= duration) {
-            time += duration;
-        } else {
-            time += timeSeries[i+1] - timeSeries[i];
-        }
-    }
-    // 只要攻击过一次，最后一定会有一个完整的中毒时间
-    if (timeSeries.length !== 0) {
-        return time+=duration;
-    } else {
+let findPoisonedDuration = function(timeSeries, duration) {
+    if (timeSeries.length === 0) {
         return 0;
     }
+    
+    let time = 0;
+    for (let i = 0; i < timeSeries.length-1; i++) {
+        time += Math.min(timeSeries[i+1] - timeSeries[i], duration);
+    }
+    time += duration;
+    return time;
 };
+findPoisonedDuration([1, 4], 2);
