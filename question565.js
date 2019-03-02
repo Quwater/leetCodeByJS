@@ -1,28 +1,36 @@
 /**
- * @name Array Nesting
  * @param {number[]} nums
  * @return {number}
  */
-var arrayNesting = function (nums) {
-    var max = Number.MIN_VALUE;
-    var visited = [];
-    for (var i = 0; i < nums.length; i++) {
-        // 如果该索引已被访问，便跳过
-        if (visited[i])
-            continue;
-        max = Math.max(max, calcLength(nums, i, visited));
+let arrayNesting = function (nums) {
+    // let set = new Set(),
+    //     max = 0,
+    //     current,
+    //     visited = [];
+    // for (let i = 0; i < nums.length; i++) {
+    //     current = nums[i];
+    //     if (visited.includes(current)) {
+    //         continue;
+    //     }
+    //     while (!set.has(current)) {
+    //         set.add(current);
+    //         current = nums[current];
+    //         visited.push(nums[current]);
+    //     }
+    //     max = Math.max(max, set.size);
+    //     set.clear();
+    // }
+    // return max;
+    let maxSize = 0;
+    for (let i = 0; i < nums.length; i++) {
+        let size = 0;
+        for (let j = i; nums[j] >= 0; size++) {
+            const nextIndex = nums[j];
+            nums[j] = -1;
+            j = nextIndex;
+        }
+        maxSize = Math.max(maxSize, size);
     }
-    return max;
+    return maxSize;
 };
-
-var calcLength = function (nums, start, visited) {
-    var i = start,
-        count = 0;
-    // 开始后便不能再与初始值重复。没找到一个，将其 visited 属性赋予真
-    while (count == 0 || i != start) {
-        visited[i] = true;
-        i = nums[i];
-        count++;
-    }
-    return count;
-};
+arrayNesting([5, 4, 0, 3, 1, 6, 2]);
