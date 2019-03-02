@@ -3,22 +3,21 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var productExceptSelf = function(nums) {
-    var len = nums.length;
-    var arr = [];
-    arr.length = len;
+let productExceptSelf = function (nums) {
+    let len = nums.length;
+    let arr = new Array(len);
 
-    // 一面过来。一面过去，恰好两次都漏掉了当前索引的值
-    var countRight = 1;
-    for (var i = 0; i < len; i++) {
+    // 左边的乘积，右边的乘积，相乘得到结果
+    let countRight = 1;
+    for (let i = 0; i < len; i++) {
         arr[i] = countRight;
         countRight *= nums[i];
     }
-    var countLeft = 1;
-    for (var j = len-1; j >= 0; j--) {
+    let countLeft = 1;
+    for (let j = len - 1; j >= 0; j--) {
         arr[j] *= countLeft;
         countLeft *= nums[j];
     }
-
     return arr;
 };
+productExceptSelf([1,2,3,4]);
