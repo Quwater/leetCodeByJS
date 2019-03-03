@@ -10,7 +10,7 @@ let subdomainVisits = function (cpdomains) {
         let arr = i.split(' '),
             domain = arr[1];
         while (domain) {
-            table[domain] = table[domain] ? table[domain] + parseInt(arr[0]) : parseInt(arr[0]);
+            table[domain] = table[domain] + parseInt(arr[0]) || parseInt(arr[0]);
             if (domain.indexOf('.') !== -1) {
                 domain = domain.slice(domain.indexOf('.') + 1);
             } else {
