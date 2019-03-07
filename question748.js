@@ -4,6 +4,7 @@
  * @return {string}
  */
 // O(m*n)
+// can't use sort(), it's not stable.
 let shortestCompletingWord = function (licensePlate, words) {
     let mapA = {},
         res,
