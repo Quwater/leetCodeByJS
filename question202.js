@@ -2,6 +2,7 @@
  * @param {number} n
  * @return {boolean}
  */
+// O(n)
 let isHappy = function(n) {
     // let nums = [];
     // while (digitSquareSum(n) !== 1) {
@@ -18,9 +19,9 @@ let isHappy = function(n) {
         slow = digitSquareSum(slow);
         fast = digitSquareSum(fast);
         fast = digitSquareSum(fast);
-    } while(slow != fast);
-    if (slow == 1) return 1;
-    else return 0;
+    } while(slow !== fast);
+    if (slow === 1) return true;
+    else return false;
 };
 let digitSquareSum = function (x) {
     // let sum = 0;  
