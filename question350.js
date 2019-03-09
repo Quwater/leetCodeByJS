@@ -3,8 +3,9 @@
  * @param {number[]} nums2
  * @return {number[]}
  */
-var intersect = function(nums1, nums2) {
-    let map = {}
+// O(n)
+let intersect = function(nums1, nums2) {
+    let map = {};
     for (let i of nums1) {
         map[i] = (map[i] + 1) || 1;
     }
@@ -12,8 +13,7 @@ var intersect = function(nums1, nums2) {
         if (map[n]) {
             map[n]--;
             return true;
-        } else {
-            return false;
-        }
+        } 
     });
 };
+intersect([1, 2, 2, 1], [2, 2]);
