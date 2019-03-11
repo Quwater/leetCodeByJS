@@ -28,9 +28,8 @@ let findAnagrams = function (s, p) {
     //     }
     // }
     // return res;
-    
-    const map = new Array(26);
-    map.fill(0);
+
+    const map = new Array(26).fill(0);
 
     for (let i = 0; i < p.length; i++) {
         map[p[i].charCodeAt() - 97]++;
