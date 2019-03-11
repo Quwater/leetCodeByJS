@@ -1,36 +1,37 @@
 /**
- * @name Contains Duplicate II
  * @param {number[]} nums
  * @param {number} k
  * @return {boolean}
  */
- var containsNearbyDuplicate = function(nums, k) {
-     if (nums.length <= 1 || k < 1) {
-         return false;
-     }
-     // nums[i]对应的值如果不为 undefined，那么在 k 的范围内，已经有个值与其相等
-     let map = {};
-     for (let i = 0; i < nums.length; i++) {
-         if (map[nums[i]] !== undefined) {
-             return true;
-         } else {
-             if (i - k >= 0) {
-                 map[nums[i-k]] = undefined;
-             }
-             map[nums[i]] = true;
-         }
-     }
-     return false;
- };
+let containsNearbyDuplicate = function(nums, k) {
+    let map = {},
+        min = Number.MAX_SAFE_INTEGER;
+    for (let i = 0; i < nums.length; i++) {
+        if (map[nums[i]]) {
+            if (map[nums[i]][1]  > i - map[nums[i]][0] || map[nums[i]][1] === 0) {
+                map[nums[i]] = [i, i - map[nums[i]][0]];  
+            } else {
+                map[nums[i]] = [i, map[nums[i]][1]];
+            }   
+        } else {
+            map[nums[i]] = [i, 0];
+        }
+    }
+    for (let i in map) {
+        if (map[i][1] !== 0) {
+            min = Math.min(min, map[i][1]);
+        }
+    }
+    return min <= k;
+    
+    // let set = new Set();
+    // for (let i = 0; i < nums.length; i++) {
+    //     console.log(set);
+    //     if (i > k) set.delete(nums[i - k - 1]);
+    //     if (set.has(nums[i])) return true;
+    //     set.add(nums[i]);
+    // }
+    // return false;
+};
 
-// 复杂度过高，通不过大量数据测试
-// var containsNearbyDuplicate = function(nums, k) {
-//     for (var i = 0; i < nums.length; i++) {
-//         for (var j = i + 1; j <= i+ k; j++) {
-//             if (nums[i] === nums[j]) {
-//                 return true;
-//             }
-//         }
-//     }
-//     return false;
-// };
+containsNearbyDuplicate([1, 2, 1], 0);
