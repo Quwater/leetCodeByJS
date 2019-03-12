@@ -11,8 +11,8 @@
  * @param {TreeNode} t2
  * @return {TreeNode}
  */
-var mergeTrees = function(t1, t2) {
-    var root = null;
+let mergeTrees = function(t1, t2) {
+    let root = null;
     if (t1 && t2) {
         root =  new TreeNode(null);
         root.val = (t1.val) + (t2.val);
