@@ -10,7 +10,7 @@
  * @param {number} val
  * @return {TreeNode}
  */
-var searchBST = function(root, val) {
+let searchBST = function(root, val) {
     if (!root) {
         return null;
     }
