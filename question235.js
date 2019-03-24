@@ -13,9 +13,7 @@
  */
 // O(N)
 let lowestCommonAncestor = function(root, p, q) {
-    let parentVal = root.val,
-        pVal = p.val,
-        qVal = q.val;
+    let { pVal, parentVal, qVal } = val(root, p, q);
     if (pVal > parentVal && qVal > parentVal) {
         return lowestCommonAncestor(root.right, p, q);
     } else if (pVal < parentVal && qVal < parentVal) {
@@ -24,3 +22,8 @@ let lowestCommonAncestor = function(root, p, q) {
         return root;
     }
 };
+
+function val(root, p, q) {
+    let parentVal = root.val, pVal = p.val, qVal = q.val;
+    return { pVal, parentVal, qVal };
+}
