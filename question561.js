@@ -3,21 +3,14 @@
  * @param {number[]} nums
  * @return {number}
  */
-var arrayPairSum = function(nums) {
-    // var sum = 0;
-    // var newNums = nums.sort(function(a, b) {
-    //     return a - b;
-    // });
-    // for (var i = 0; i < newNums.length; i+=2) {
-    //     sum += newNums[i];
-    // }
-    // return sum;
-    let sum = 0;
+let arrayPairSum = function(nums) {
+    let res = 0;
     let newNums = nums.sort((a, b) => {
         return a - b;
     });
     for (let i = 0; i < newNums.length; i+=2) {
-        sum += newNums[i];
+        res += newNums[i];
     }
-    return sum;
+    return res;
 };
+arrayPairSum([1, 4, 2, 3]);
