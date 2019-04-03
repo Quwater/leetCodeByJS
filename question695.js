@@ -27,6 +27,7 @@ let maxAreaOfIsland = function (grid) {
             return 0;
         }
         seen[r][c] = true;
+        // four direction
         return (1 + area(r + 1, c) + area(r - 1, c) + area(r, c - 1) + area(r, c + 1));
     }
 };
