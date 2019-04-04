@@ -3,9 +3,10 @@
  * @param {number[]} nums
  * @return {number[]}
  */
+// O(N)
 let productExceptSelf = function (nums) {
-    let len = nums.length;
-    let arr = new Array(len);
+    let len = nums.length,
+        arr = new Array(len);
 
     // 左边的乘积，右边的乘积，相乘得到结果
     let countRight = 1;
