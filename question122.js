@@ -3,7 +3,7 @@
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
+let maxProfit = function(prices) {
     let sum = 0;
 
     // 相邻价位赚钱的全部买进，不赚钱的全部避开
@@ -12,3 +12,4 @@ var maxProfit = function(prices) {
     }
     return sum;
 };
+maxProfit([7,1,5,3,6,4]);
