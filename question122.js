@@ -3,6 +3,7 @@
  * @param {number[]} prices
  * @return {number}
  */
+// O(N)
 let maxProfit = function(prices) {
     let sum = 0;
 
