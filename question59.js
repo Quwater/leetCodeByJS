@@ -5,7 +5,7 @@
 let generateMatrix = function(n) {
     let matrix = new Array(n);
     for (let i = 0; i < n; i++) {
-        matrix[i] = new Array(n)
+        matrix[i] = new Array(n);
     }
     if (n == 0) {
         return matrix;
