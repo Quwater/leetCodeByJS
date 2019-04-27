@@ -9,7 +9,7 @@ let gameOfLife = function(board) {
         if (row < 0 || row >= rows) return 0;
         if (col < 0 || col >= cols) return 0;
         return board[row][col] & 1;
-    }
+    };
     const spawn = (row, col) => board[row][col] |= 2;
     const liveNeighbors = (row, col) => {
         return before(row-1, col-1)
@@ -36,3 +36,4 @@ let gameOfLife = function(board) {
         }
     }
 };
+gameOfLife([[0,1,0],[0,0,1],[1,1,1],[0,0,0]]);
