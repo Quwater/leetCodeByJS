@@ -17,3 +17,4 @@ let isRobotBounded = function(instructions) {
     }
     return x == 0 && y == 0 || i > 0;
 };
+isRobotBounded('GGLLGG');
