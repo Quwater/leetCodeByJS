@@ -19,12 +19,13 @@ let highFive = function(items) {
             }
         }
         score.sort((a, b) => b - a);
-        let sum = 0
+        let sum = 0;
         for (let k = 0; k < 5; k++) {
-            sum += score[k]
+            sum += score[k];
         }
         res.push([arrId[i], Math.floor(sum / 5)]);
         score = [];
     }
     return res;
 };
+highFive([[1,91],[1,92],[2,93],[2,97],[1,60],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76]]);
