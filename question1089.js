@@ -12,3 +12,4 @@ let duplicateZeros = function(arr) {
         }
     }
 };
+duplicateZeros([1, 0, 3]);
