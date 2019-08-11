@@ -7,6 +7,7 @@
  */
 
 // dp
+// https://www.geeksforgeeks.org/dice-throw-dp-30/
 let numRollsToTarget = function(d, f, target) {
     // if (d * f < target) {
     //     return 0;
