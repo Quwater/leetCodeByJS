@@ -1,4 +1,5 @@
 /**
+ * @name Find Numbers with Even Number of Digits
  * @param {number[]} nums
  * @return {number}
  */
@@ -11,4 +12,4 @@ const findNumbers = function(nums) {
     }
     return res;
 };
-findNumbers([12, 345, 2, 6, 7896]);
+findNumbers([12, 234, 2, 6]);
