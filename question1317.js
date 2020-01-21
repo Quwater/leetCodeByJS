@@ -10,3 +10,4 @@ const getNoZeroIntegers = function(n) {
         }
     }
 };
+getNoZeroIntegers(10);

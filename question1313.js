@@ -12,3 +12,4 @@ const decompressRLElist = function(nums) {
     }
     return res;
 };
+decompressRLElist([1, 2, 3]);
