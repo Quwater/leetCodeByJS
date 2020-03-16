@@ -1,4 +1,5 @@
 /**
+ * @name Generate a String With Characters That Have Odd Counts
  * @param {number} n
  * @return {string}
  */
