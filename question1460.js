@@ -17,3 +17,5 @@ const canBeEqual = function (target, arr) {
     }
     return true;
 };
+
+canBeEqual([1, 12], [12, 1]);
