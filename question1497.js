@@ -1,4 +1,5 @@
 /**
+ * @name Check If Array Pairs Are Divisible by k
  * @param {number[]} arr
  * @param {number} k
  * @return {boolean}
