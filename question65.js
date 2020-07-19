@@ -22,6 +22,7 @@ const isNumber = function (s) {
                 return false;
             }
             eSeen = true;
+            // 保证 e 后有数字
             numSeen = false;
         } else if (arr[i] == '+' || arr[i] == '-') {
             if (i !== 0 && arr[i - 1] !== 'e' && arr[i - 1] !== 'E') {
