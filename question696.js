@@ -17,20 +17,40 @@ let countBinarySubstrings = function (s) {
     // return count;
 
     // more clever solution
-    let prevRunLength = 0,
-        curRunLength = 1,
-        res = 0;
-    for (let i = 1; i < s.length; i++) {
-        if (s.charAt(i) === s.charAt(i - 1)) {
-            curRunLength++;
-        } else {
-            prevRunLength = curRunLength;
-            curRunLength = 1;
-        }
+    // two pointers
+    // let prevRunLength = 0,
+    //     curRunLength = 1,
+    //     res = 0;
+    // for (let i = 1; i < s.length; i++) {
+    //     if (s.charAt(i) === s.charAt(i - 1)) {
+    //         curRunLength++;
+    //     } else {
+    //         prevRunLength = curRunLength;
+    //         curRunLength = 1;
+    //     }
 
-        if (prevRunLength >= curRunLength) {
-            res++;
+    //     if (prevRunLength >= curRunLength) {
+    //         res++;
+    //     }
+    // }
+    // return res;
+
+    let p = 1,
+        count = 1,
+        last = 0,
+        res = 0;
+    while (p < s.length) {
+        if (s[p] === s[p - 1]) {
+            count++;
+        } else {
+            res += Math.min(count, last);
+            last = count;
+            count = 1;
         }
+        if (p === s.length - 1) {
+            res += Math.min(count, last);
+        }
+        p++;
     }
     return res;
 };
