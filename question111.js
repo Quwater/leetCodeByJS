@@ -9,12 +9,9 @@
  * @param {TreeNode} root
  * @return {number}
  */
-let minDepth = function(root) {
+let minDepth = function (root) {
     if (!root) {
         return 0;
-    }
-    if (root.left === null && root.right === null) {
-        return 1;
     }
     if (root.left === null) {
         return minDepth(root.right) + 1;
