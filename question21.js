@@ -12,27 +12,28 @@
  * @return {ListNode}
  */
 // O(n)
-let mergeTwoLists = function(l1, l2) {
-    // 仅仅只是连接两条链表
-    // if (l1 === null) {
+let mergeTwoLists = function (l1, l2) {
+    // if (l1 == null) {
     //     return l2;
-    // } else {
-    //     var head = l1;
-    //     while (head.next) {
-    //         head = head.next;
-    //     }
-    //     head.next = l2;
-    //
-    //     l1.sort();
+    // }
+    // else if (l2 == null) {
     //     return l1;
     // }
+    // else if (l1.val < l2.val) {
+    //     l1.next = mergeTwoLists(l1.next, l2);
+    //     return l1;
+    // }
+    // else {
+    //     l2.next = mergeTwoLists(l1, l2.next);
+    //     return l2;
+    // }
 
-    let mergeHead = {val: -1, next: null},
+    let mergeHead = { val: -1, next: null },
         head = mergeHead;
     // 遍历两条链表，谁的值小，谁成为下一个元素
     // 类似mergesort方式
-    while(l1 && l2) {
-        if(l1.val > l2.val) {
+    while (l1 && l2) {
+        if (l1.val > l2.val) {
             head.next = l2;
             l2 = l2.next;
         } else {
