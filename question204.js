@@ -2,46 +2,24 @@
  * @param {number} n
  * @return {number}
  */
-var countPrimes = function (n) {
-    let count = 1;
-    let notPrime = {};
-    if (n <= 1) {
-        return 0;
+const countPrimes = function (n) {
+    let arr = new Array(n);
+    for (let i = 2; i < n; i++) {
+        arr[i] = true;
     }
-
-    if (n === 2) {
-        return 0;
-    }
-
-    // for (let i = 2; i < n; i++) {
-    //     if (!notPrime[i]) {
-    //         count++;
-    //     }
-    //     for (let j = 2; i *j < n; j++) {
-    //             notPrime[i*j] = true;
-    //     }
-    // }
-
-
-    // O(nlog(n))
-    const sqrt = Math.sqrt(n);
-
-    for (let i = 3; i < n; i += 2) {
-        if (notPrime[i]) {
-            continue;
-        }
-
-        count++;
-
-        if (i > sqrt) {
-            continue;
-        }
-
-        for (let j = i * i; j < n; j += i * 2) {
-            notPrime[j] = true;
+    let res = 0;
+    for (let i = 2; i * i < n; i++) {
+        if (arr[i]) {
+            for (let j = i * i; j < n; j += i) {
+                arr[j] = false;
+            }
         }
     }
-
-    return count;
+    for (let i of arr) {
+        if (i) {
+            res++;
+        }
+    }
+    return res;
 };
 countPrimes(10);
