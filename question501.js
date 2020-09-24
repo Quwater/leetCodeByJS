@@ -50,10 +50,10 @@ let findMode = function (root) {
         if (count > max) {
             res = [];
             res.push(node.val);
+            max = count;
         } else if (count === max) {
             res.push(node.val);
         }
-        max = Math.max(count, max);
         curVal = node.val;
         dfs(node.right);
     };
