@@ -29,6 +29,7 @@ const buildTree = function (inorder, postorder) {
 
         // 下标减一
         post_idx--;
+        // 为了后序遍历数组的节点取值，先构建右子树
         // 构造右子树
         root.right = helper(index + 1, in_right);
         // 构造左子树
