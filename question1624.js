@@ -10,3 +10,4 @@ const maxLengthBetweenEqualCharacters = function (s) {
     }
     return max;
 };
+maxLengthBetweenEqualCharacters('abba');
